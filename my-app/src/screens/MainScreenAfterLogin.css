@@ -1,0 +1,38 @@
+/* Categories section */
+.categories-section {
+    margin-top: 20px;
+    margin-left: 150px;
+    max-width: 800px;
+    text-align: left;
+}
+
+/* Category title styles */
+.category h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* Movie row styles */
+.movie-row {
+    display: flex;
+    flex-wrap: wrap; /* Wrap to next line if too wide */
+    gap: 20px; /* Space between movies */
+    margin-top: 10px;
+}
+
+/* Movie item styles */
+.movie-item {
+    text-align: center; /* Center align image and text */
+    width: 120px; /* Set width for each movie item */
+}
+
+/* Movie image styles */
+.movie-image {
+    width: 100px;
+    height: 150px;
+    object-fit: cover; /* Ensure image fits nicely */
+    border-radius: 5px; /* Add slight rounding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow */
+}

@@ -1,0 +1,93 @@
+:root {
+  --search-element-height: 40px;
+}
+
+/* Grid layout for movie results */
+.movies-grid {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+/* Error and empty results */
+.error-message, .no-results {
+    color: #ccc;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Container for search and results */
+.search-container {
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Light mode styles */
+.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Container for search input and button */
+.search-bar-container {
+justify-content: center;
+display: flex;
+align-items: center;
+}
+
+/* Search input styling */
+.search-input {
+width: 260px; 
+height: var(--search-element-height); 
+padding: 10px 15px;
+font-size: 1rem;
+border-radius: 5px 0 0 5px; 
+border: 1px solid #ccc; 
+border-right: none;
+box-sizing: border-box; 
+}
+
+.search-input:focus-visible {
+  border: 2px solid #b20710;
+  border-right: none;
+  outline: none;
+}
+.search-input:focus-visible + .search-button {
+  border: 2px solid #b20710;
+  border-left: none;
+}
+
+/* Search button styling */
+.search-button {
+width: 30px; 
+height: var(--search-element-height); 
+background-color: white;
+font-size: 18px;
+border: 1px solid #ccc;
+border-left: none; 
+border-radius: 0 5px 5px 0; 
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+box-sizing: border-box; 
+left: 230px;
+}
+
+.search-button:hover {
+  background-color: #b20710;
+  border-color: #b20710;
+}
+
+
+

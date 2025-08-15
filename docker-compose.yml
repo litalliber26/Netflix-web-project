@@ -1,0 +1,78 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongodb/mongodb-community-server:latest
+    container_name: ex3-mongodb
+    networks:
+      - ex3-network
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME:-root}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD:-Password1}
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+
+  nodejs-app:
+    build:
+      context: ./EX3
+      dockerfile: Dockerfile
+    container_name: ex3-nodejs-server
+    networks:
+      - ex3-network
+    ports:
+      - "3000:3000"
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      cpp-server:
+        condition: service_started
+    environment:
+      CONNECTION_STRING: "mongodb://${MONGO_USERNAME:-root}:${MONGO_PASSWORD:-Password1}@mongodb:27017"
+      PORT: 3000
+      RECOMMENDER_SERVER_HOST: "cpp-server"
+      RECOMMENDER_SERVER_PORT: ${CPP_SERVICE_PORT:-8080}
+      jwtSecret: "65408160e1354e072eeac4832f66fe47452a115e281cb6564256496c3e9adf3b0a9a0c4d587455cf4f8f2c1213ebef8dfbbe853e368de122d89b71c874c6fca6"
+
+  cpp-server:
+    build:
+      context: ./EX3/EX2-main/src
+      dockerfile: Dockerfile
+    container_name: ex3-cpp-server
+    networks:
+      - ex3-network
+    ports:
+      - "${CPP_SERVICE_PORT:-8080}:${CPP_SERVICE_PORT:-8080}"
+    volumes:
+      - ./EX3/EX2-main/data:/program/ex2/data
+    command: ["${CPP_SERVICE_PORT:-8080}"]
+    restart: unless-stopped
+
+  react-app:
+    build:
+      context: ./my-app
+      dockerfile: Dockerfile
+      args:
+        API_URL: "http://localhost:3000/api" # Inject API URL at build time
+    container_name: ex3-react-app
+    networks:
+      - ex3-network
+    ports:
+      - "3001:3001"
+    depends_on:
+      - nodejs-app
+    restart: unless-stopped
+
+volumes:
+  mongodb_data:
+
+networks:
+  ex3-network:
+    driver: bridge

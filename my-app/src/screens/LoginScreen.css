@@ -1,0 +1,104 @@
+.main-login-screen-container {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../assets/netflix-background.jpg);
+    height: 100vh;
+    color: white
+}
+.login-title {
+    margin-bottom: unset;
+}
+.upper-row > .netflix-logo {
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+.main-container {
+    display: flex;
+    justify-content: center;
+}
+.login-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 4px;
+    padding: 48px 68px;
+    max-width: 450px;
+    gap: 20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+a {
+  all: unset !important;
+    cursor: pointer !important;
+}
+
+.signup-gray-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+}
+.signup-bold-text {
+    font-weight: 500;
+}
+
+.signup-bold-text:hover {
+    text-decoration: underline;
+}
+
+.login-input-field {
+    position: relative;
+  }
+  
+  .login-input-field input {
+    width: calc(100% - 1px);
+    padding: 1.5rem 1rem 0.5rem;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    margin-bottom: unset;
+  }
+  
+  .login-input-field input:focus {
+    border-color: #e50914;
+  }
+  
+  .login-input-field label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 1rem;
+    display: block;
+    width: 100%;
+    margin-bottom: 0; /* Override default `<label>` margin */
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    transition: all .1s ease-in-out;
+  }
+  
+  .login-input-field > input::placeholder {
+    color: transparent; /* Hide placeholder text */
+  }
+
+  .login-input-field-input:is(:-webkit-autofill, :autofill) {
+    background-color: rgb(4, 34, 85) !important; /* Hide placeholder text */
+    color: black !important
+  }
+
+  .login-error-container {
+    color: black;
+    padding: 1rem;
+    background-color: rgb(216, 157, 49);
+    border-radius: 0.25rem;
+    border-width: 0.0625rem;
+  }

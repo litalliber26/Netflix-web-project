@@ -1,0 +1,62 @@
+/* General styles */
+.categories-container {
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    margin-top: unset;
+}
+
+/* Light and dark themes */
+.categories-container.light {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.categories-container.dark {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Categories section */
+.categories-section {
+    margin-left: 1px; 
+    text-align: left; 
+}
+
+/* Main title styles */
+.categories-section h2 {
+    font-size: 3rem; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    text-align: left; /* Align to the left */
+    margin-bottom: 20px; /* Add spacing below */
+}
+
+
+/* Category title styles */
+.category h3 {
+    font-size: 2rem; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    margin-bottom: 10px; /* Add spacing below */
+    text-align: left; /* Align to the left */
+}
+
+.category ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: left;
+}
+
+.category li {
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* Movie row styles */
+.movie-row {
+    display: flex;
+    flex-wrap: wrap; /* Wrap to next line if too wide */
+    gap: 20px; /* Space between movies */
+    margin-top: 10px;
+}
+
+

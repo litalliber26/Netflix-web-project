@@ -1,0 +1,17 @@
+# Use an official Node.js runtime as the base image
+FROM node:18-alpine
+
+# Set the working directory in the container
+WORKDIR /usr/src/app
+
+# Copy all application files FIRST before installing dependencies
+COPY . . 
+
+# Install project dependencies
+RUN npm install
+
+# Expose the port your application runs on
+EXPOSE 3000
+
+# Command to run your application
+CMD ["node", "app.js"]

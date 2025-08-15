@@ -1,0 +1,20 @@
+.signup_login_image-upload {
+    color: white;
+}
+
+.signup_login_upload-button-image {
+    width: 75px;
+    height: 75px;
+}
+
+.signup_login_file-input {
+    display: none;
+}
+
+.signup_login_upload-button-container {    
+    cursor: pointer;
+    display: flex;
+    gap: 5%;
+    align-items: center;
+    justify-content: center;
+}

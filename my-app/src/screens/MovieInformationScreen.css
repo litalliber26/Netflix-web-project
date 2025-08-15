@@ -1,0 +1,123 @@
+/* Movie content styling */
+.movie-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.play-button {
+    background: transparent;
+    border: unset;
+    padding: 10px;
+    display: flex;
+    gap: 5%;
+    margin-top: 4.5%;
+    width: 12%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255, 0, 0, 0.6);
+    border-radius: 4px;
+    position: relative;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.play-button.dark-mode{
+    color: white;
+}
+
+.play-button:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.7), 0 2px 5px rgba(255, 0, 0, 0.4);
+}
+
+.tag {
+    background-color: rgba(53, 50, 50, 0.3); /* Slightly brighter background */
+    padding: 12px 20px; /* Increased padding */
+    border-radius: 25px; /* More rounded corners */
+    font-size: 1.2rem; /* Larger text */
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Shadow for emphasis */
+    letter-spacing: 1px; /* Space between letters */
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for interaction */
+.tag:hover {
+    transform: scale(1.1); /* Slightly enlarges on hover */
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+.movie-content-upper-part {
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+    width: 600px;
+}
+.movie-title { 
+    margin-bottom: 3%;
+}
+/* Recommendation items container */
+.recommendation-list {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.movie-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.movie-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Smoke overlay effect */
+.movie-image-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.8) 100%);
+    pointer-events: none;
+}
+
+
+.no-recommendations {
+    font-size: 1.1rem;
+    color: #f07777;
+    margin-top: 10px;
+  }
+
+/* src/screens/Screen8.css */
+/* Dark mode styles */
+.dark-mode {
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text */
+}
+  
+/* Light mode styles */
+.light-mode {
+    background-color: #ebebeb !important;
+    color: #000000; /* Black text */
+}
+
+/* Remove potential gradients or overlays in light mode */
+.light-mode .overlay {
+    background: none !important;
+}
+
+/* Ensure specific sections or containers are properly styled */
+.light-mode .movie-image-container::after {
+    background: none !important; /* Remove radial gradient in light mode */
+}
+
+
+  

@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.movie-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie-header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.movie-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.movie-category {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+
+.video-box {
+  padding: 10px;
+}
+
+/* Original styles from Screen6.css */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.movie-video-player-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.movie-header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.movie-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.movie-category {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.video-box {
+  padding: 10px;
+}
+
+/* Original styles from Screen6.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #000000; /* Black background */
+  color: #ffffff; /* White text */
+}
+
+/* Light mode styles */
+.light-mode {
+  background-color: #ffffff; /* White background */
+  color: #000000; /* Black text */
+}
+
+/* Movie container styling */
+.movie-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.movie-header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.movie-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.movie-category {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* Video player placeholder styling */
+.video-player-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  border-radius: 10px;
+  color: inherit; /* Inherit text color based on mode */
+  font-size: 1.2rem;
+  text-align: center;
+  position: relative;
+
+  #player {
+    max-height: 400px;
+    width: 100%;
+  }
+}
+
+/* Adjust the video container background in both modes */
+.dark-mode .video-player-placeholder {
+  background-color: #333; /* Dark background for video */
+}
+
+.light-mode .video-player-placeholder {
+  background-color: #f0f0f0; /* Light background for video */
+}
+
+/* Button styling */
+button.theme-toggle {
+  position: absolute;
+  width: 8%;
+  top: 10px;
+  left: 1380px;
+  right: 100px;
+  z-index: 100;
+  padding: 10px 15px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button.theme-toggle:hover {
+  background-color: #e0e0e0;
+}
+
